@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Грок 3 - Бесплатная версия</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-out;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: pulse 2s infinite;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            text-align: left;
+            animation: slideUp 1s ease-out;
+        }
+
+        .highlight {
+            color: #4facfe;
+            font-weight: bold;
+        }
+
+        .open-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            animation: bounce 2s infinite;
+        }
+
+        .open-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .open-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shine 3s infinite;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            animation: slideUp 1s ease-out;
+            animation-delay: calc(var(--i) * 0.2s);
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .feature-icon {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: #4facfe;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .description {
+                font-size: 1rem;
+            }
+            
+            .open-btn {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <h1>Грок 3</h1>
+        <div class="description">
+            <p>Рады представить вам <span class="highlight">Грок 3</span> — передовую языковую модель искусственного интеллекта, которая теперь доступна <span class="highlight">абсолютно бесплатно</span> для всех пользователей! Это революционное решение в области искусственного интеллекта создано, чтобы помогать вам с различными задачами:</p>
+            <br>
+            <div class="feature" style="--i: 1">
+                <div class="feature-icon">🚀</div>
+                <div>Мгновенные ответы на ваши вопросы из любой области знаний</div>
+            </div>
+            <div class="feature" style="--i: 2">
+                <div class="feature-icon">💻</div>
+                <div>Написание и анализ программного кода на различных языках программирования</div>
+            </div>
+            <div class="feature" style="--i: 3">
+                <div class="feature-icon">📝</div>
+                <div>Помощь в создании текстов, статей, резюме и других документов</div>
+            </div>
+            <div class="feature" style="--i: 4">
+                <div class="feature-icon">🔍</div>
+                <div>Анализ данных и предоставление инсайтов</div>
+            </div>
+            <div class="feature" style="--i: 5">
+                <div class="feature-icon">🧠</div>
+                <div>Решение сложных задач и помощь в обучении</div>
+            </div>
+            <br>
+            <p>Грок 3 обучен на огромном массиве данных и способен поддерживать естественные диалоги на множестве языков. Благодаря передовым алгоритмам машинного обучения, он постоянно совершенствуется и адаптируется к вашим потребностям.</p>
+            <br>
+            <p>В отличие от платных решений, <span class="highlight">Грок 3 полностью бесплатен</span> и не имеет ограничений по функциональности. Вам доступны все возможности модели без каких-либо скрытых платежей или подписок.</p>
+            <br>
+            <p>Откройте Грок 3 прямо сейчас и получите доступ к новым возможностям искусственного интеллекта!</p>
+        </div>
+    </div>
+    
+    <button class="open-btn" id="openBtn">Открыть в браузере</button>
+
+    <!-- Аудио элемент для воспроизведения звука -->
+    <audio id="soundEffect" src="228.mp3" preload="auto"></audio>
+
+    <script>
+        // Анимация частиц на фоне
+        const particles = document.getElementById('particles');
+        
+        function createParticles() {
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                
+                // Стили для частиц
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 5 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = `rgba(${Math.floor(Math.random() * 100 + 155)}, ${Math.floor(Math.random() * 100 + 155)}, 255, ${Math.random() * 0.5 + 0.1})`;
+                particle.style.borderRadius = '50%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.left = Math.random() * 100 + '%';
+                
+                // Анимация
+                const duration = Math.random() * 20 + 10;
+                particle.style.animation = `float ${duration}s linear infinite`;
+                
+                // Кейфреймы для анимации
+                const keyframes = `
+                    @keyframes float {
+                        0% {
+                            transform: translate(0, 0) rotate(0deg);
+                            opacity: ${Math.random() * 0.5 + 0.3};
+                        }
+                        50% {
+                            transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(180deg);
+                            opacity: ${Math.random() * 0.5 + 0.5};
+                        }
+                        100% {
+                            transform: translate(0, 0) rotate(360deg);
+                            opacity: ${Math.random() * 0.5 + 0.3};
+                        }
+                    }
+                `;
+                
+                // Добавление кейфреймов
+                const style = document.createElement('style');
+                style.innerHTML = keyframes;
+                document.head.appendChild(style);
+                
+                particles.appendChild(particle);
+            }
+        }
+        
+        // Создание частиц при загрузке страницы
+        createParticles();
+        
+        // Обработчик для кнопки "Открыть в браузере"
+        const openBtn = document.getElementById('openBtn');
+        const soundEffect = document.getElementById('soundEffect');
+        
+        openBtn.addEventListener('click', function() {
+            // Эффект нажатия
+            this.style.transform = 'scale(0.95)';
+            
+            // Воспроизведение звукового файла
+            soundEffect.play();
+            
+            setTimeout(() => {
+                this.style.transform = '';
+                alert('Грок 3 открывается в вашем браузере!');
+            }, 200);
+        });
+        
+        // Анимация для появления элементов
+        document.addEventListener('DOMContentLoaded', function() {
+            const features = document.querySelectorAll('.feature');
+            features.forEach((feature, index) => {
+                setTimeout(() => {
+                    feature.style.opacity = '1';
+                }, 500 + index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
